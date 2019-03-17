@@ -2,8 +2,6 @@ const discord = require ('discord.js');
 
  var client = new discord.Client();
 
- const token = "NTU2OTUxMDQyMjczNzA2MDA4.D3BNKA.3Gjyz-Am32Xcx3dnR7rx5r-0JDw"
-
  const cooldowns = new Set();
 
  const coolguy = new Set();
@@ -280,4 +278,4 @@ client.on('message', message => {
 
 
 
-client.login(token);
+client.login(process.env.AZIZ);
