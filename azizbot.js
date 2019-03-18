@@ -41,7 +41,7 @@ client.on('guildMemberRemove' , member => {
     channel.send(`:wave: Bye We will miss you ,:sob: ${member} :sob:`);
 });
 
- const prefix = "!";
+ const prefix = "?";
  client.on ("message", (message) => {
 
     if (message.author.bot) return;
@@ -183,11 +183,11 @@ client.on('guildMemberRemove' , member => {
         })
     }
 
-    if (msg.startsWith ("!owner")) {
+    if (msg.startsWith ("?owner")) {
         message.channel.send ("This guy is the owner !", {files: ["./images/Ibbbe.PNG"]});
     }
 
-        if (message.content.startsWith ("+gen") && message.member.hasPermission ("USE_EXTERNAL_EMOJIS")) {
+        if (message.content.startsWith ("?gen") && message.member.hasPermission ("USE_EXTERNAL_EMOJIS")) {
             if (message.channel.id !== '524572831573344276') return
             if (message.author.bot || coolguy.has(message.author)) return
             mention.send('**Your acc is: **' + a[Math.floor(Math.random() * 10)])
@@ -198,7 +198,7 @@ client.on('guildMemberRemove' , member => {
           skanherooo(message.author, 180);
             }
 
-            if (message.content.startsWith ("+pgen") && message.member.hasPermission ("USE_EXTERNAL_EMOJIS")) {
+            if (message.content.startsWith ("?pgen") && message.member.hasPermission ("USE_EXTERNAL_EMOJIS")) {
                 if (message.channel.id !== '528718495375163402') return
                 if (message.author.bot || cooldowns.has(message.author)) return
                 mention.send('**Your Premuim Acc Is: **' + b[Math.floor(Math.random() * 10)])
@@ -211,7 +211,7 @@ client.on('guildMemberRemove' , member => {
             
            
     
-    if (msg.startsWith ("!write")) {
+    if (msg.startsWith ("?write")) {
         editedmessage = message.content.slice (6);
 
         client.msgs [message.author.username] = {
@@ -224,7 +224,7 @@ fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
 
     }
 
-    if (msg.startsWith("+stock")) {
+    if (msg.startsWith("?stock")) {
         embed = new discord.RichEmbed ()
         .setAuthor("STOCK")
         .setDescription("There Is Currectly 300 Fortnite Account In Stock \n There Is Currently 400 Premuim Forntite Account In Stock")
@@ -233,7 +233,7 @@ fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
         message.channel.send(embed);
     }
 
-    if (msg.startsWith ("!get")) {
+    if (msg.startsWith ("?get")) {
         let _message = client.msgs[message.author.username].message;
         message.channel.send ("" + _message);
     }
@@ -266,7 +266,7 @@ fs.writeFile ("./msgs.json", JSON.stringify (client.msgs, null, 4), err => {
 
 
 client.on('message', message => {
-    if (message.content.split(' ')[0] == '!dm')
+    if (message.content.split(' ')[0] == '?dm')
        message.guild.members.forEach( member => {
          if (!message.member.hasPermission("ADMINISTRATOR"))  return;
            member.send(message.content.substr(3));
