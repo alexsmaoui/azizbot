@@ -10,7 +10,7 @@ const discord = require ('discord.js');
  client.on ("ready", () => {
      console.log ("ready!");
 
-     client.user.setActivity ("cheacking 5 servers | !helpp");
+     client.user.setActivity("cheacking 1 server | ?helpp", {type: "WATCHING"});
      
      
 
